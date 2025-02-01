@@ -109,6 +109,7 @@
             flex-direction: column;
             align-items: center;
         }
+
     </style>
 </head>
 <body>
@@ -124,11 +125,10 @@
                 <img src="https://benjamin34237527405245.github.io/RKCalender/kal.png" alt="Website 1 Icon">
                 Calender
             </a>
-             <a href="https://benjamin34237527405245.github.io/shortURL/" class="button-wrapper" id="openUrlButton4">
+            <a href="https://benjamin34237527405245.github.io/shortURL/" class="button-wrapper" id="openUrlButton4">
                 <img src="https://benjamin34237527405245.github.io/shortURL/link.png" alt="Website 4 Icon">
                 shortURL
             </a>
-             <!-- Add new buttons here -->
             <a href="https://benjamin34237527405245.github.io/BuyLog/" class="button-wrapper" id="openUrlButton5">
                 <img src="https://benjamin34237527405245.github.io/BuyLog/buy.png" alt="Website 5 Icon">
                 BuyLog
@@ -144,7 +144,42 @@
             <button class="clear-cache-button" id="clearCacheButton">Clear Cache</button>
             <button class="add-to-home-button" id="addToHomeButton">Install</button>
         </div>
+        <div id="webchat"></div>
     </div>
+
+    <script src="https://cdn.botpress.cloud/webchat/v2.2/inject.js"></script>
+    <script defer>
+        window.botpress.on("webchat:ready", (conversationId) => {
+            
+        });
+        window.botpress.on("webchat:error", (error) => {
+            console.error("Webchat error:", error);
+        });
+        window.botpress.init({
+            "botId": "43d7537c-65fc-48be-82a1-89f8d58502e4",
+            "configuration": {
+                "composerPlaceholder": "Ask Me any question related to Rahul's Portal website!",
+                "botName": "Portum",
+                "botAvatar": "https://files.bpcontent.cloud/2025/02/01/09/20250201095930-6FM9LWML.png",
+                "botDescription": "Portum will help you know about Rahul's Portal website!",
+                "website": {},
+                "email": {
+                    "title": "",
+                    "link": ""
+                },
+                "phone": {},
+                "termsOfService": {},
+                "privacyPolicy": {},
+                "color": "#9b63d5",
+                "variant": "solid",
+                "themeMode": "dark",
+                "fontFamily": "inter",
+                "radius": 1
+            },
+            "clientId": "63d7323c-0210-45fa-b968-5f3a78cfbaf7",
+            
+        });
+    </script>
 
     <script>
         if ('serviceWorker' in navigator) {
