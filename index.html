@@ -35,10 +35,11 @@
             text-align: center;
             z-index: 1; /* Ensure content is above the video */
         }
-        .video-heading {
-            width: 100%;
-            max-width: 600px;
-            margin-bottom: 20px;
+        .welcome-heading {
+            font-size: 50px;
+            color: #D8BFD8;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 40px;
         }
         .button-container {
             display: flex;
@@ -49,7 +50,7 @@
         .button-wrapper {
             display: flex;
             align-items: center;
-            background: linear-gradient(90deg, #ffc800, #ff8800);
+            background: linear-gradient(90deg, #D8BFD8, #BA55D3);
             color: #000000;
             padding: 20px 40px;
             border: none;
@@ -62,11 +63,11 @@
             text-decoration: none;
         }
         .button-wrapper:hover {
-            background: linear-gradient(90deg, #4a2ed7, #6f63d9);
+            background: linear-gradient(90deg, #BA55D3, #D8BFD8);
             transform: scale(1.05);
         }
         .button-wrapper:active {
-            background: linear-gradient(90deg, #4a2ed7, #6f63d9);
+            background: linear-gradient(90deg, #BA55D3, #D8BFD8);
             transform: scale(1);
         }
         .button-wrapper img {
@@ -116,12 +117,6 @@
             background: linear-gradient(90deg, #2196F3, #21CBF3);
             transform: scale(1);
         }
-        .video-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
     </style>
 </head>
 <body>
@@ -130,12 +125,7 @@
         Your browser does not support the video tag.
     </video>
     <div class="container">
-        <div class="video-container">
-            <video class="video-heading" autoplay loop muted playsinline id="magicVideo">
-                <source src="magic.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
+        <h1 class="welcome-heading">WELCOME TO RAHUL'S MAGIC PORTAL !</h1>
         <div class="button-container">
             <a href="https://benjamin34237527405245.github.io/RKCalender/" class="button-wrapper" id="openUrlButton1">
                 <img src="https://benjamin34237527405245.github.io/RKCalender/kal.png" alt="Website 1 Icon">
@@ -274,24 +264,6 @@
                 });
             }
         });
-
-        // Adjust the playback speed of the video
-        window.addEventListener('load', () => {
-            const video = document.getElementById('magicVideo');
-            if (video) {
-                video.playbackRate = 0.5; // Set the desired playback speed (e.g., 1.5x)
-            }
-        });
-
-        // Ensure video plays on mobile devices
-        document.addEventListener('click', () => {
-            const video = document.getElementById('magicVideo');
-            if (video) {
-                video.play().catch(error => {
-                    console.error('Video playback failed:', error);
-                });
-            }
-        }, { once: true });
     </script>
 </body>
 </html>
