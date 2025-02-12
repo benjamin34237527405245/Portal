@@ -18,7 +18,7 @@
             margin: 0;
             padding: 0;
             position: relative;
-            overflow: hidden; /* Ensure content doesn't overflow */
+            overflow-y: auto; /* Allow vertical scrolling */
         }
         .background-video {
             position: absolute;
@@ -40,6 +40,11 @@
             color: #D8BFD8;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
             margin-bottom: 40px;
+        }
+        @media (max-width: 600px) {
+            .welcome-heading {
+                font-size: 30px; /* Smaller font size for mobile */
+            }
         }
         .button-container {
             display: flex;
@@ -120,7 +125,7 @@
     </style>
 </head>
 <body>
-    <video class="background-video" autoplay muted loop>
+    <video class="background-video" autoplay muted loop playsinline>
         <source src="back4k.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
