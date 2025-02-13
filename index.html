@@ -28,6 +28,16 @@
             height: 100%;
             object-fit: cover;
             z-index: -1; /* Send video to the back */
+            transition: transform 0.5s ease;
+        }
+        @media (max-width: 600px) {
+            .background-video {
+                object-fit: contain; /* Ensure the video fits within the container on mobile */
+                transition: none; /* Remove transition for mobile */
+            }
+            .welcome-heading {
+                font-size: 30px; /* Smaller font size for mobile */
+            }
         }
         .container {
             width: 80%;
@@ -269,6 +279,27 @@
                 });
             }
         });
+
+        function rotateVideoForMobile() {
+            const video = document.querySelector('.background-video');
+            if (window.innerWidth <= 600) {
+                video.style.transform = 'rotate(90deg)';
+                video.style.width = '120vh'; /* Ensure the video covers the entire background */
+                video.style.height = '2000vw'; /* Ensure the video covers the entire background */
+                video.style.top = '50%';
+                video.style.left = '50%';
+                video.style.transform = 'translate(-50%, -50%) rotate(90deg)';
+            } else {
+                video.style.transform = 'rotate(0deg)';
+                video.style.width = '100%';
+                video.style.height = '100%';
+                video.style.top = '0';
+                video.style.left = '0';
+            }
+        }
+
+        window.addEventListener('resize', rotateVideoForMobile);
+        window.addEventListener('load', rotateVideoForMobile);
     </script>
 </body>
 </html>
