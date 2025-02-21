@@ -18,7 +18,7 @@
             margin: 0;
             padding: 0;
             position: relative;
-            overflow-y: auto; /* Allow vertical scrolling */
+            overflow: hidden; /* Prevent scrolling on the body */
         }
         .background-video {
             position: absolute;
@@ -38,12 +38,24 @@
             .welcome-heading {
                 font-size: 30px; /* Smaller font size for mobile */
             }
+            .button-wrapper {
+                padding: 10px 20px; /* Adjust padding for mobile */
+                font-size: 14px; /* Adjust font size for mobile */
+            }
+            .button-wrapper img {
+                width: 30px; /* Adjust image size for mobile */
+                height: 30px; /* Adjust image size for mobile */
+                margin-right: 10px; /* Adjust margin for mobile */
+            }
         }
         .container {
             width: 80%;
             max-width: 1200px;
             text-align: center;
             z-index: 1; /* Ensure content is above the video */
+            overflow-y: auto; /* Allow vertical scrolling within the container */
+            max-height: 100vh; /* Limit the height of the container */
+            padding: 20px; /* Add padding for better spacing */
         }
         .welcome-heading {
             font-size: 50px;
