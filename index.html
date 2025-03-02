@@ -147,6 +147,29 @@
             background: linear-gradient(90deg, #2196F3, #21CBF3);
             transform: scale(1);
         }
+
+        /* Wave animation styles */
+        .wave {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background: radial-gradient(circle, rgb(180, 102, 253) 0%, rgba(221, 19, 130, 0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0.8;
+            animation: wave-animation 0.5s ease-out;
+        }
+
+        @keyframes wave-animation {
+            0% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(5);
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -323,6 +346,33 @@
 
         window.addEventListener('resize', rotateVideoForMobile);
         window.addEventListener('load', rotateVideoForMobile);
+
+        // Wave animation script
+        function createWave(x, y) {
+            const wave = document.createElement('div');
+            wave.className = 'wave';
+            wave.style.left = `${x}px`;
+            wave.style.top = `${y}px`;
+            document.body.appendChild(wave);
+
+            wave.addEventListener('animationend', () => {
+                wave.remove();
+            });
+        }
+
+        document.addEventListener('mousemove', function(e) {
+            createWave(e.pageX, e.pageY);
+        });
+
+        document.addEventListener('touchstart', function(e) {
+            const touch = e.touches[0];
+            createWave(touch.pageX, touch.pageY);
+        });
+
+        document.addEventListener('touchmove', function(e) {
+            const touch = e.touches[0];
+            createWave(touch.pageX, touch.pageY);
+        });
     </script>
 </body>
 </html>
