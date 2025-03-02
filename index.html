@@ -198,7 +198,7 @@
             </a>
             <a href="https://benjamin34237527405245.github.io/JeeMainRank-CollegePredictor/" class="button-wrapper" id="openUrlButton6">
                 <img src="https://benjamin34237527405245.github.io/JeeMainRank-CollegePredictor/results.png" alt="Website 6 Icon">
-                JEE Mains Predictor
+                RaCo Predictor
             </a>
             <a href="https://benjamin34237527405245.github.io/ChillBall/" class="button-wrapper" id="openUrlButton3">
                 <img src="https://benjamin34237527405245.github.io/ChillBall/ballz.png" alt="Website 3 Icon">
@@ -360,19 +360,12 @@
             });
         }
 
-        document.addEventListener('mousemove', function(e) {
-            createWave(e.pageX, e.pageY);
-        });
-
-        document.addEventListener('touchstart', function(e) {
-            const touch = e.touches[0];
-            createWave(touch.pageX, touch.pageY);
-        });
-
-        document.addEventListener('touchmove', function(e) {
-            const touch = e.touches[0];
-            createWave(touch.pageX, touch.pageY);
-        });
+        // Only enable wave animation on non-mobile devices
+        if (!('ontouchstart' in window)) {
+            document.addEventListener('mousemove', function(e) {
+                createWave(e.pageX, e.pageY);
+            });
+        }
     </script>
 </body>
 </html>
