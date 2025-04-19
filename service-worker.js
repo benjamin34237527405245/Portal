@@ -1,4 +1,4 @@
-const CACHE_NAME = 'portal-cache-v15'; // Update cache name to ensure new cache is used
+const CACHE_NAME = 'portal-cache-v16'; // Update cache name to ensure new cache is used
 const urlsToCache = [
     'index.html',
     'manifest.json',
